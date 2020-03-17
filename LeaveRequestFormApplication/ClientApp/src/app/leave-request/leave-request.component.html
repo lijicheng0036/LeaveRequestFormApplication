@@ -1,0 +1,62 @@
+<div class="component__body__content">
+  <h1 class="heading-1">
+    New Leave Request
+  </h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <p>Subject: </p>
+      <input type="text" class="form-control" [(ngModel)]="leaveSubject" name="leaveSubject">
+    </div>
+
+    <div class="form-group">
+      <label for="title">Job Title</label>
+      <select class="form-control" id="title" (change)="onDepartmentChange()" [(ngModel)]="selectedDepartmentId" name="department">
+        <option value=""></option>
+        <option *ngFor="let p of departments" value="{{p.id}}">{{p.title}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="employee">Employee Name</label>
+      <select class="form-control" id="employee" [(ngModel)]="selectedEmployeeId" name="employee">
+        <option value=""></option>
+        <option *ngFor="let ae of availableEmployee" value="{{ae.id}}">{{ae.firstName}} {{ae.lastName}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="leaveType">Leave Type</label>
+      <select class="form-control" id="leaveType" [(ngModel)]="selectedLeaveType" name="leave-type">
+        <option *ngFor="let lt of leaveTypes" value="{{lt.id}}">{{lt.name}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Start & End Date:</label>
+      <div class="date-range-container">
+        <kendo-daterange>
+          <label>
+            <kendo-dateinput kendoDateRangeStartInput format="dd/MM/yyyy" [(value)]="dateRange.start" autoCorrectOn="blur"></kendo-dateinput>
+          </label>
+          &nbsp;&nbsp;
+          <label>
+            <kendo-dateinput kendoDateRangeEndInput format="dd/MM/yyyy" [(value)]="dateRange.end" autoCorrectOn="blur"></kendo-dateinput>
+          </label>
+        </kendo-daterange>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <p>Description: </p>
+      <textarea class="form-control" rows="5" placeholder="Enter your reason and comments here..." [(ngModel)]="leaveDescription" name="leaveDescription"></textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+
+  </form>
+
+</div>
+
+

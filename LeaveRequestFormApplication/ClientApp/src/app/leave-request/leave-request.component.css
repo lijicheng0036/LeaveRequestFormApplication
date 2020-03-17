@@ -1,0 +1,27 @@
+.component__body__content {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.heading-1 {
+
+  font-size: 2.25rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1.5rem 0;
+}
+
+.heading-2 {
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.date-range-container {
+  margin-left: 0;
+  padding-left: 0;
+  width: 50%;
+}
